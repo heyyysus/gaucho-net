@@ -23,7 +23,7 @@ const generateToken = (userId: string) => {
 /**
  * User Model
  */
-export interface User {
+export interface IUser {
     user_id: number          //Primary Key
     email: string,
     u_name: string,
