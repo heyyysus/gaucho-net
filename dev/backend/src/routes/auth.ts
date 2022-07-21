@@ -1,7 +1,7 @@
 import Express, { response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { TOKEN_SECRET } from '../secret.json';
-import { query } from '../db';
+import { query } from '../db_res/db';
 import bcrypt from 'bcrypt';
 
 

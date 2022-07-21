@@ -1,5 +1,5 @@
 import Express from 'express';
-import { query } from '../db';
+import { query } from '../db_res/db';
 import { requireAuthRequest } from '../middleware/requireAuth';
 
 const PostsRouter = Express.Router();
@@ -7,17 +7,6 @@ const PostsRouter = Express.Router();
 /**
  * Get 25 Newest Posts from Following
  */
-
-export interface IPost {
-    post_id: number,
-    user_id: number,
-    u_name: string,
-    body: string,
-    likes: string[],
-    children: IPost[],
-    createdAt: Date,
-    updatedAt: Date,
-};
 
 PostsRouter.get('/', (req: requireAuthRequest, res) => {
     const sqlQuery = `SELECT p.post_id, p.body, p.parent, p.isRoot, p.createdAt, p.updatedAt, u.u_name, u.user_id 

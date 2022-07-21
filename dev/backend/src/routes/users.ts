@@ -1,7 +1,7 @@
 import Express from 'express';
 import { requireAuthRequest } from '../middleware/requireAuth';
 import { IUser } from './auth';
-import { query } from '../db';
+import { query } from '../db_res/db';
 
 const UsersRouter = Express.Router();
 

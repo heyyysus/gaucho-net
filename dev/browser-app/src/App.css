@@ -1,5 +1,14 @@
-.App {
-  text-align: center;
+body {
+    background-color: rgb(244, 246, 248);
+}
+
+.body-container {
+  background-color: #fff;
+  padding: 30px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 8px;
 }
 
 .App-logo {

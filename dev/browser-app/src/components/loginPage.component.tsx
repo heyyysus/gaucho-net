@@ -1,25 +1,30 @@
-import 'bootstrap';
-import React, { useEffect } from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
-import { LoginBtn, LogoutBtn } from './form.component';
-import { Carousel } from './carousel.component';
+import React from 'react';
+import Form from './form.component';
+import bootstrap from 'bootstrap';
 
-const Home = () => {
-    const { isAuthenticated, user, isLoading } = useAuth0();
-    useEffect(() => {
-        console.log(user);
-    }, [user]);
+const LoginPage = () => {
+    
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    const handleSubmit = () => {
+
+    }
+
     return (
-        <div className='home-container'>
-
-            <Carousel />
-            
-            {isAuthenticated && <p> Hello {user?.name}</p>}
-            {!isAuthenticated && <LoginBtn title='Login' />} 
-            {isAuthenticated && <LogoutBtn title='Logout' /> }
-            
-        </div>
+        <Form onSubmit={handleSubmit}>
+            <h2>Login</h2>
+            <div className="mb-3">
+                <label htmlFor="username" className="form-label">Username</label>
+                <input type="text" className="form-control" id="username" />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="username" className="form-label">Password</label>
+                <input type="password" className="form-control" id="plainTextPwd" />
+            </div>
+            <button id="submitBtn" type="submit" className="btn btn-primary">Sign in</button>
+        </Form>
     );
 };
 
-export default Home;
+export default LoginPage;
